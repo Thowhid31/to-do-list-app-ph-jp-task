@@ -5,12 +5,16 @@ const ToDoForm = ({input, setInput, todos, setTodos}) => {
     const handleInputChange = event =>{
         setInput(event.target.value);
     }
+
+
     
     const handleFormSubmit = event => {
         event.preventDefault();
         setTodos([...todos, {id: uuidv4(), title: input, completed: false}]);
         setInput("");
     }
+
+  
     return (
         <form onSubmit={handleFormSubmit}>
             <input type="text" placeholder='Enter Tile' className='task-input' value={input} required onChange={handleInputChange}/>
