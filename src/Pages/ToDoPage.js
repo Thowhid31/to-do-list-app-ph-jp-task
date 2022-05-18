@@ -18,21 +18,21 @@ const ToDoPage = ({ todos, setTodos, editTodo, setEditTodo }) => {
         )
     }
 
-    const handleEdit = ({id}) => {
-        const findTodo = todos.find((todo) => todo.id === id);
-        setEditTodo(findTodo)
-    }
+    // const handleEdit = ({id}) => {
+    //     const findTodo = todos.find((todo) => todo.id === id);
+    //     setEditTodo(findTodo)
+    // }
 
     return (
         <div className='todo-class'>
             {todos.map((todo) => (
                 <li className='list-items' key={todo.id}>
-                    <input type="text" value={todo.title} className='list' onChange={(event) =>
+                    <input type="text" value={todo.title} className={`list ${todo.completed ? 'complete' : ""}`} onChange={(event) =>
                         event.preventDefault()
                     } />
                     <div className='all-todo-button'>
                         <button onClick={()=> handleComplete(todo)} className='todo-class1'>Completed</button>
-                        <button onClick={()=> handleEdit(todo)} className='todo-class2'>Edit</button>
+                        {/* <button onClick={()=> handleEdit(todo)} className='todo-class2'>Edit</button> */}
                         <button className='todo-class3' onClick={()=> handleDelete(todo)}>Delete</button>
                     </div>
                 </li>

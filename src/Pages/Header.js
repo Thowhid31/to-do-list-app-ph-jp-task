@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ToDoForm from './ToDoForm';
 import ToDoPage from './ToDoPage';
 import './ToDoPage.css';
 
 
 const Header = () => {
+    const initialState = JSON.parse(localStorage.getItem('todos')) || [];
     const [input, setInput] = useState('')
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState(initialState)
+
+
+    useEffect(()=>{
+        localStorage.getItem('todos', JSON.stringify(todos))
+    }, [todos])
+
     return (
-        <div className='header'>
+
+
+        <div className='container'>
+            <div className='container'>
+            <div className='header'>
             <div>
             <h1>TO DO LIST</h1>
             <ToDoForm
@@ -25,6 +36,11 @@ const Header = () => {
                 ></ToDoPage>
             </div>
         </div>
+            </div>
+        </div>
+
+
+        
     );
 };
 

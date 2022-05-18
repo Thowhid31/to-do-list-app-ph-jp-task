@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from '../Header';
+import Login from '../Login';
 import '../ToDoPage.css'
 
 const Home = () => {
     return (
         <div className='container'> 
             <div className='app-wrapper'>
-            <Header></Header>
+                <Login></Login>
+            
         </div>
         </div>
     );
