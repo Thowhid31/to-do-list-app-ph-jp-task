@@ -17,7 +17,7 @@ const Header = () => {
     return (
 
 
-        <div className='container'>
+        <div>
             <div className='container'>
             <div className='header'>
             <div>
@@ -29,7 +29,7 @@ const Header = () => {
             setTodos={setTodos}
             ></ToDoForm>
             </div>
-            <div>
+            <div className='container'>
                 <ToDoPage
                 todos={todos}
                 setTodos={setTodos}
